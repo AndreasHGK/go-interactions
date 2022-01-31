@@ -4,7 +4,6 @@ import (
 	"github.com/diamondburned/arikawa/v3/discord"
 )
 
-// todo: allow these to be used
 type (
 	// User is a parameter that allows a user to be input.
 	User discord.UserID
