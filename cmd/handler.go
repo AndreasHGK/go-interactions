@@ -23,6 +23,9 @@ type Handler struct {
 
 // NewHandler returns a pointer to a new Handler. This can be used to register & handle commands.
 func NewHandler(logger Logger) *Handler {
+	if logger == nil {
+		logger = NopLogger{}
+	}
 	return &Handler{
 		commands:        map[discord.CommandID]Command{},
 		pendingCommands: map[string]Command{},

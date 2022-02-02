@@ -14,3 +14,18 @@ type Logger interface {
 	Errorln(args ...interface{})
 	Fatalln(args ...interface{})
 }
+
+// NopLogger will discard logged messages.
+type NopLogger struct{}
+
+func (NopLogger) Debugf(format string, args ...interface{}) {}
+func (NopLogger) Printf(format string, args ...interface{}) {}
+func (NopLogger) Warnf(format string, args ...interface{})  {}
+func (NopLogger) Errorf(format string, args ...interface{}) {}
+func (NopLogger) Fatalf(format string, args ...interface{}) {}
+
+func (NopLogger) Debugln(args ...interface{}) {}
+func (NopLogger) Println(args ...interface{}) {}
+func (NopLogger) Warnln(args ...interface{})  {}
+func (NopLogger) Errorln(args ...interface{}) {}
+func (NopLogger) Fatalln(args ...interface{}) {}

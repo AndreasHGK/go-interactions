@@ -6,11 +6,8 @@ and based on the command system from [df-mc/dragonfly](https://github.com/df-mc/
 
 ### Note
 
-This library is currently not quite ready for production use.
-There might be bugs, and while I do try to test everything there could always be some edge cases.
-The library is also not feature complete yet.
-Currently, there is no way to reliably use this across multiple nodes.
-Other currently missing features include command parameter options and autocompleted params.
+This library is currently not quite feature complete.
+Currently missing features include command parameter options, autocompleted params and command permissions.
 
 ## Usage
 
