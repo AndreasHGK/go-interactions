@@ -35,7 +35,7 @@ type Greet struct {
     // Optional parameters can be added like shown for this. A cmd.Optional[] needs to be wrapped around the parameter
     // type. It has a few methods to get the underlying value and to return whether the value was provided. All optional
     // parameters have to be provided after all required parameters.
-    Delay cmd.Optional[int] `description:"Whether or not to show the response publicly"`
+    Delay cmd.Optional[int] `description:"How long to wait before sending the message"`
 }
 
 // Run will be called when the command is executed by the player. All parameter values will be set inside the struct,
