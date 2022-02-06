@@ -9,7 +9,7 @@ import (
 
 // Interaction will be passed to the command executor when a command is executed by a user. It contains details about
 // the command, such as the user who sent it, the channel in which it got sent and a guild ID if the command was
-// executed within a channel in a guild. If that is not the case, a discord.NullGuildID will be provided instead.
+// executed within a channel in a guild. If that is not the case, an invalid discord.GuildID will be provided instead.
 // Interaction responses can also be sent with Interaction.Respond and Interaction.DeferResponse.
 type Interaction struct {
 	api   API
@@ -126,7 +126,7 @@ func (i *Interaction) ChannelID() discord.ChannelID {
 
 // InGuild returns whether the interaction originated from within a guild.
 func (i *Interaction) InGuild() bool {
-	return i.guildId != discord.NullGuildID
+	return i.guildId.IsValid()
 }
 
 // GuildID returns the discord.GuildID of the guild where the command has been executed. This will be equal to
