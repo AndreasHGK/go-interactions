@@ -50,6 +50,7 @@ func (m MessageResponse) marshal() (r api.InteractionResponse) {
 		Data: &api.InteractionResponseData{
 			Files:           m.Files,
 			AllowedMentions: m.AllowedMentions,
+			TTS:             m.TTS,
 		},
 	}
 	if m.Content != "" {
@@ -57,6 +58,9 @@ func (m MessageResponse) marshal() (r api.InteractionResponse) {
 	}
 	if len(m.Embeds) > 0 {
 		r.Data.Embeds = &m.Embeds
+	}
+	if len(m.Components) > 0 {
+		r.Data.Components = &m.Components
 	}
 	if m.Ephemeral {
 		r.Data.Flags |= api.EphemeralResponse
